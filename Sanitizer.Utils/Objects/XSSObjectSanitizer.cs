@@ -14,8 +14,7 @@ namespace Sanitizer.Utils.Objects
 
         public T Sanitize(T entity)
         {
-            var properties = typeof(T).GetProperties();
-            foreach (var property in properties)
+            foreach (var property in typeof(T).GetProperties())
             {
                 if (property.GetCustomAttributes(typeof(AntiXSS), false).Any())
                 {
