@@ -10,10 +10,10 @@ namespace Sanitizer.Utils.Strings
         public XSSStringSanitizer()
         {
             ListPatterns = new List<SanitizePattern>();
-            ListPatterns.Add(new SanitizePattern() { Pattern = "<\\s*(script)\\s*>", ReplacePattern = "[script]" });
-            ListPatterns.Add(new SanitizePattern() { Pattern = "</script>", ReplacePattern = "[/script]" });
-            ListPatterns.Add(new SanitizePattern() { Pattern = "<img src", ReplacePattern = "[img src" });
-            ListPatterns.Add(new SanitizePattern() { Pattern = "javascript", ReplacePattern = "[javascript]" });
+            ListPatterns.Add(new SanitizePattern() { Pattern = "<\\s*(script)\\s*>", ReplaceText = "[script]" });
+            ListPatterns.Add(new SanitizePattern() { Pattern = "</script>", ReplaceText = "[/script]" });
+            ListPatterns.Add(new SanitizePattern() { Pattern = "<img src", ReplaceText = "[img src" });
+            ListPatterns.Add(new SanitizePattern() { Pattern = "javascript", ReplaceText = "[javascript]" });
         }
 
         public string Sanitize(string value)
@@ -21,7 +21,7 @@ namespace Sanitizer.Utils.Strings
             var result = value;
             foreach (var pattern in ListPatterns)
             {
-                result = Regex.Replace(result, pattern.Pattern, pattern.ReplacePattern, RegexOptions.IgnoreCase);
+                result = Regex.Replace(result, pattern.Pattern, pattern.ReplaceText, RegexOptions.IgnoreCase);
             }
 
             return result;
