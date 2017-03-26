@@ -45,3 +45,13 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+/.vs/Sanitizer.Utils/v14/.suo
+*.dll
+/packages/NUnit.3.6.1/lib/MonoAndroid
+/packages/NUnit.3.6.1/lib
+/packages
+/Sanitizer.Utils/bin/Debug
+/Sanitizer.Utils/obj/Debug
+/Sanitizer.Utils.Tests/bin/Debug
+/Sanitizer.Utils.Tests/obj/Debug
+/Sanitizer.Utils.Tests
